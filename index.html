@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temario ICFES - Lectura Crítica | Clases con Juan</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 90px;
+        }
+
+        .sidebar h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sidebar a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        /* Content Area */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--secondary-color);
+            scroll-margin-top: 100px;
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin: 1.2rem 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .card ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card li {
+            margin-bottom: 0.4rem;
+        }
+
+        .badge {
+            background-color: rgba(52, 152, 219, 0.15);
+            color: var(--secondary-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">📚 Clases con Juan</a>
+            <ul class="nav-links">
+                <li><a href="#niveles">Niveles</a></li>
+                <li><a href="#contenidos">Contenidos</a></li>
+                <li><a href="#estructuras">Estructuras</a></li>
+                <li><a href="#logica">Lógica</a></li>
+                <li><a href="#discontinuos">Discontinuos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Lectura Crítica - ICFES Saber 11</h1>
+        <p>Guía de estudio detallada e interactiva para dominar los conceptos clave de la prueba de Lectura Crítica[cite: 1].</p>
+    </section>
+
+    <!-- Main Content Layout -->
+    <div class="main-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <h3>Temario de Estudio</h3>
+            <ul>
+                <li><a href="#niveles">1. Niveles de Información</a></li>
+                <li><a href="#contenidos">2. Contenidos Locales</a></li>
+                <li><a href="#estructuras">3. Estructuras Textuales</a></li>
+                <li><a href="#logica">4. Lógica y Argumentación</a></li>
+                <li><a href="#discontinuos">5. Textos Discontinuos</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content">
+
+            <!-- Section 1 -->
+            <article id="niveles" class="card">
+                <h2><span>1.</span> Niveles de Información <span class="badge">Fundamental</span></h2>
+                <p>En la prueba de Lectura Crítica, la información se presenta de dos formas principales que evalúan tu nivel de comprensión literal e inferencial[cite: 1]:</p>
+                
+                <h3>Información Explícita</h3>
+                <p>Es aquella que aparece expresada de forma clara y directa en el texto[cite: 1]. No requiere de suposiciones; se encuentra escrita de manera literal.</p>
+                
+                <h3>Información Implícita</h3>
+                <p>Es la información que no está escrita directamente, pero que se puede deducir o inferir a partir de las pistas o del contexto que ofrece la lectura[cite: 1].</p>
+            </article>
+
+            <!-- Section 2 -->
+            <article id="contenidos" class="card">
+                <h2><span>2.</span> Contenidos Locales del Texto e Información Explícita</h2>
+                <p>Esta categoría evalúa la capacidad de comprender el significado de palabras, frases u oraciones que conforman un texto[cite: 1]:</p>
+                <ul>
+                    <li><strong>Manejo de conectores y sinónimos:</strong> Uso adecuado de los nexos gramaticales (causa, consecuencia, contraste) y reconocimiento de palabras con significado semejante según el contexto[cite: 1].</li>
+                    <li><strong>Tipos de oraciones:</strong> Identificación de oraciones simples, compuestas, coordinadas y subordinadas para entender la cohesión del texto[cite: 1].</li>
+                    <li><strong>Figuras literarias:</strong> Reconocimiento de recursos estilísticos como la metáfora, el símil, la hipérbole y la personificación[cite: 1].</li>
+                </ul>
+            </article>
+
+            <!-- Section 3 -->
+            <article id="estructuras" class="card">
+                <h2><span>3.</span> Estructura de Textos</h2>
+                <p>Comprender la intención comunicativa y la organización del contenido según las diferentes tipologías textuales[cite: 1]:</p>
+                <ul>
+                    <li><strong>Texto Informativo:</strong> Su propósito principal es transmitir datos o conocimientos de manera objetiva[cite: 1].</li>
+                    <li><strong>Texto Narrativo:</strong> Relata hechos reales o imaginarios que les suceden a unos personajes en un espacio y tiempo determinados[cite: 1].</li>
+                    <li><strong>Texto Expositivo:</strong> Explica y desarrolla de forma clara y detallada un tema específico para facilitar su comprensión[cite: 1].</li>
+                    <li><strong>Texto Argumentativo:</strong> Busca convencer o persuadir al lector sobre una postura mediante razones y evidencias[cite: 1].</li>
+                </ul>
+            </article>
+
+            <!-- Section 4 -->
+            <article id="logica" class="card">
+                <h2><span>4.</span> Lógica y Argumentación</h2>
+                <p>Análisis de la validez y consistencia de las ideas planteadas en los textos de mayor complejidad[cite: 1]:</p>
+                <ul>
+                    <li><strong>Introducción:</strong> Comprender la tesis central y el marco del argumento[cite: 1].</li>
+                    <li><strong>Argumentos:</strong> Razonamientos utilizados para demostrar o justificar una proposición[cite: 1].</li>
+                    <li><strong>Premisas y Conclusiones:</strong> Estructura fundamental de la inferencia lógica (afirmaciones previas que sustentan el resultado final)[cite: 1].</li>
+                    <li><strong>Estrategias de Argumentación:</strong> Métodos como el ejemplo, la autoridad, la analogía o la causa-efecto[cite: 1].</li>
+                    <li><strong>Textos de Tipo Filosófico:</strong> Análisis crítico de abstracciones, dilemas éticos y conceptos conceptuales complejos[cite: 1].</li>
+                    <li><strong>Falacias y Errores Argumentativos:</strong> Identificación de razonamientos engañosos o lógicamente inválidos[cite: 1].</li>
+                </ul>
+            </article>
+
+            <!-- Section 5 -->
+            <article id="discontinuos" class="card">
+                <h2><span>5.</span> Textos Discontinuos</h2>
+                <p>Textos que no siguen una estructura de secuencias de oraciones y párrafos, sino que se organizan de forma visual o esquemática[cite: 1]:</p>
+                <ul>
+                    <li><strong>Infografías:</strong> Combinación de imágenes explicativas, sintéticas y textos para comunicar información de manera visual[cite: 1].</li>
+                    <li><strong>Caricaturas:</strong> Ilustraciones que de forma satírica o humorística expresan una crítica sobre un tema social, político o cultural[cite: 1].</li>
+                    <li><strong>Cómics:</strong> Secuencia de viñetas que representan una historia mediante imágenes y texto narrativo o de diálogo[cite: 1].</li>
+                </ul>
+            </article>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Clases con Juan</strong> - Preparación ICFES Saber 11[cite: 1]</p>
+        <p>Encuentra más herramientas de trabajo y contenido en nuestras redes[cite: 1]:</p>
+        <div class="social-links">
+            <a href="http://www.clasesconjuan.co" target="_blank">Página Web[cite: 1]</a>
+            <a href="https://www.youtube.com/clasesconjuan" target="_blank">YouTube[cite: 1]</a>
+            <a href="#">Facebook[cite: 1]</a>
+            <a href="#">Instagram[cite: 1]</a>
+            <a href="#">Twitter[cite: 1]</a>
+        </div>
+        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;">Diseñado con inspiración espacial y navegabilidad accesible.</p>
+    </footer>
+
+</body>
+</html>
