@@ -1,21 +1,23 @@
+Aquí tienes la **versión en HTML completo e interactivo** que integra la estructura del sitio espacial (menú lateral responsivo, tarjetas explicativas, navegación por secciones y estética visual) junto con la **explicación pedagógica detallada de todo el temario** para dictar tu clase[cite: 1, 2]:
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temario ICFES - Lectura Crítica | Clases con Juan</title>
+    <title>Clase Magistral: Lectura Crítica ICFES | Clases con Juan</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #333333;
-            --text-muted: #666666;
-            --border-color: #e0e0e0;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --primary-color: #1a1c2e;
+            --secondary-color: #25284a;
+            --accent-color: #00d2ff;
+            --accent-glow: rgba(0, 210, 255, 0.3);
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --card-bg: #1e2238;
+            --border-color: #2d325a;
+            --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
         * {
@@ -25,24 +27,24 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            background-color: var(--bg-color);
+            background-color: var(--primary-color);
             color: var(--text-color);
         }
 
         /* Header Navigation */
         header {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: rgba(26, 28, 46, 0.95);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -51,13 +53,14 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-color);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
+            text-shadow: 0 0 10px var(--accent-glow);
         }
 
         .nav-links {
@@ -67,39 +70,40 @@
         }
 
         .nav-links a {
-            color: #ecf0f1;
+            color: var(--text-color);
             text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
 
-        /* Hero Section */
+        /* Hero Banner */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            background: linear-gradient(180deg, var(--secondary-color) 0%, var(--primary-color) 100%);
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 4rem 2rem 3rem 2rem;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 750px;
             margin: 0 auto;
         }
 
         /* Main Layout */
         .main-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1.5rem;
             display: grid;
@@ -110,20 +114,23 @@
         /* Sidebar Navigation */
         .sidebar {
             background: var(--card-bg);
-            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: var(--shadow);
             height: fit-content;
             position: sticky;
             top: 90px;
+            box-shadow: var(--shadow);
         }
 
         .sidebar h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
             margin-bottom: 1rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .sidebar ul {
@@ -131,26 +138,26 @@
         }
 
         .sidebar li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
         .sidebar a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: block;
-            padding: 0.4rem 0.6rem;
-            border-radius: 4px;
-            transition: var(--transition);
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
 
         .sidebar a:hover {
-            background-color: rgba(52, 152, 219, 0.1);
-            color: var(--secondary-color);
-            padding-left: 1rem;
+            background: var(--secondary-color);
+            color: var(--accent-color);
+            padding-left: 1.1rem;
         }
 
-        /* Content Area */
+        /* Content Cards */
         .content {
             display: flex;
             flex-direction: column;
@@ -159,31 +166,34 @@
 
         .card {
             background: var(--card-bg);
-            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             padding: 2rem;
             box-shadow: var(--shadow);
-            border-left: 5px solid var(--secondary-color);
             scroll-margin-top: 100px;
         }
 
         .card h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+            color: var(--accent-color);
             font-size: 1.6rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .card h3 {
-            color: var(--secondary-color);
-            margin: 1.2rem 0 0.5rem 0;
+            color: #ffffff;
             font-size: 1.2rem;
+            margin: 1.5rem 0 0.6rem 0;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 10px;
         }
 
         .card p {
+            color: var(--text-color);
             margin-bottom: 1rem;
-            color: #444;
+            font-size: 0.98rem;
         }
 
         .card ul {
@@ -192,23 +202,65 @@
         }
 
         .card li {
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
         }
 
-        .badge {
-            background-color: rgba(52, 152, 219, 0.15);
-            color: var(--secondary-color);
-            padding: 0.2rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
+        .card li strong {
+            color: var(--text-color);
+        }
+
+        /* Teaching Tips & Callouts */
+        .teacher-box {
+            background: rgba(0, 210, 255, 0.05);
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin: 1.2rem 0;
+            font-size: 0.93rem;
+        }
+
+        .teacher-box strong {
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Table Styling */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
         }
 
         /* Footer */
         footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
+            background-color: var(--secondary-color);
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 0;
             margin-top: 4rem;
             text-align: center;
         }
@@ -216,25 +268,28 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1rem;
             margin: 1rem 0;
         }
 
         .social-links a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1.2rem;
             border-radius: 20px;
-            transition: var(--transition);
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
-            background: var(--secondary-color);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Responsive */
+        @media (max-width: 850px) {
             .main-container {
                 grid-template-columns: 1fr;
             }
@@ -253,13 +308,13 @@
 </head>
 <body>
 
-    <!-- Header / Nav -->
+    <!-- Header Navigation -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">📚 Clases con Juan</a>
+            <a href="#" class="logo">🚀 Clases con Juan</a>
             <ul class="nav-links">
                 <li><a href="#niveles">Niveles</a></li>
-                <li><a href="#contenidos">Contenidos</a></li>
+                <li><a href="#contenidos">Contenidos Locales</a></li>
                 <li><a href="#estructuras">Estructuras</a></li>
                 <li><a href="#logica">Lógica</a></li>
                 <li><a href="#discontinuos">Discontinuos</a></li>
@@ -267,18 +322,18 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Banner -->
     <section class="hero">
-        <h1>Lectura Crítica - ICFES Saber 11</h1>
-        <p>Guía de estudio detallada e interactiva para dominar los conceptos clave de la prueba de Lectura Crítica[cite: 1].</p>
+        <h1>Guía de Clase: Lectura Crítica ICFES Saber 11</h1>
+        <p>Material conceptual y didáctico completo para desarrollar las sesiones de preparación de la prueba de Lectura Crítica.</p>
     </section>
 
-    <!-- Main Content Layout -->
+    <!-- Main Container -->
     <div class="main-container">
 
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
-            <h3>Temario de Estudio</h3>
+            <h3>Módulos de Clase</h3>
             <ul>
                 <li><a href="#niveles">1. Niveles de Información</a></li>
                 <li><a href="#contenidos">2. Contenidos Locales</a></li>
@@ -293,61 +348,103 @@
 
             <!-- Section 1 -->
             <article id="niveles" class="card">
-                <h2><span>1.</span> Niveles de Información <span class="badge">Fundamental</span></h2>
-                <p>En la prueba de Lectura Crítica, la información se presenta de dos formas principales que evalúan tu nivel de comprensión literal e inferencial[cite: 1]:</p>
+                <h2>1. Niveles de Información</h2>
+                <p>En este primer módulo explicamos la diferencia entre los dos niveles fundamentales de recepción de lectura que evalúa el examen:</p>
                 
-                <h3>Información Explícita</h3>
-                <p>Es aquella que aparece expresada de forma clara y directa en el texto[cite: 1]. No requiere de suposiciones; se encuentra escrita de manera literal.</p>
+                <h3>Información Explícita (Nivel Literal)</h3>
+                <p>Es todo aquello que el autor expresa directamente en el escrito. No requiere realizar suposiciones; basta con ubicar y rastrear la información en el texto.</p>
                 
-                <h3>Información Implícita</h3>
-                <p>Es la información que no está escrita directamente, pero que se puede deducir o inferir a partir de las pistas o del contexto que ofrece la lectura[cite: 1].</p>
+                <h3>Información Implícita (Nivel Inferencial)</h3>
+                <p>Información que no está escrita textualmente, pero que se desprende de forma lógica a partir de las pistas o el contexto que deja el autor.</p>
+
+                <div class="teacher-box">
+                    <strong>💡 Orientación Pedagógica para la Clase:</strong>
+                    Enfocar a los estudiantes en que los distractores del ICFES suelen ofrecer datos verdaderos y explícitos para preguntas de nivel implícito, buscando confundirlos.
+                </div>
             </article>
 
             <!-- Section 2 -->
             <article id="contenidos" class="card">
-                <h2><span>2.</span> Contenidos Locales del Texto e Información Explícita</h2>
-                <p>Esta categoría evalúa la capacidad de comprender el significado de palabras, frases u oraciones que conforman un texto[cite: 1]:</p>
-                <ul>
-                    <li><strong>Manejo de conectores y sinónimos:</strong> Uso adecuado de los nexos gramaticales (causa, consecuencia, contraste) y reconocimiento de palabras con significado semejante según el contexto[cite: 1].</li>
-                    <li><strong>Tipos de oraciones:</strong> Identificación de oraciones simples, compuestas, coordinadas y subordinadas para entender la cohesión del texto[cite: 1].</li>
-                    <li><strong>Figuras literarias:</strong> Reconocimiento de recursos estilísticos como la metáfora, el símil, la hipérbole y la personificación[cite: 1].</li>
-                </ul>
+                <h2>2. Contenidos Locales e Información Explícita</h2>
+                <p>Análisis de las microestructuras lingüísticas requeridas para garantizar la comprensión semántica y sintáctica:</p>
+                
+                <h3>Manejo de Conectores y Sinónimos</h3>
+                <p>Los conectores establecen la relación lógica entre dos oraciones (causa, oposición, consecuencia). Cambiar un conector modifica radicalmente el sentido global del fragmento.</p>
+
+                <h3>Tipos de Oraciones</h3>
+                <p>Enseñanza de oraciones simples y compuestas (subordinadas y coordinadas) para aprender a diferenciar la idea principal de las ideas secundarias.</p>
+
+                <h3>Figuras Literarias</h3>
+                <p>Identificación de recursos expresivos comunes en los textos (metáfora, símil, hipérbole, ironía). El enfoque en la clase debe orientarse al <em>significado en contexto</em> y no a la simple memorización de nombres.</p>
             </article>
 
             <!-- Section 3 -->
             <article id="estructuras" class="card">
-                <h2><span>3.</span> Estructura de Textos</h2>
-                <p>Comprender la intención comunicativa y la organización del contenido según las diferentes tipologías textuales[cite: 1]:</p>
-                <ul>
-                    <li><strong>Texto Informativo:</strong> Su propósito principal es transmitir datos o conocimientos de manera objetiva[cite: 1].</li>
-                    <li><strong>Texto Narrativo:</strong> Relata hechos reales o imaginarios que les suceden a unos personajes en un espacio y tiempo determinados[cite: 1].</li>
-                    <li><strong>Texto Expositivo:</strong> Explica y desarrolla de forma clara y detallada un tema específico para facilitar su comprensión[cite: 1].</li>
-                    <li><strong>Texto Argumentativo:</strong> Busca convencer o persuadir al lector sobre una postura mediante razones y evidencias[cite: 1].</li>
-                </ul>
+                <h2>3. Estructura de Textos y Tipologías</h2>
+                <p>Clasificación de los escritos según la intención comunicativa dominante del autor:</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipología</th>
+                                <th>Intención Comunicativa</th>
+                                <th>Marcadores Discursivos Clave</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Informativo</strong></td>
+                                <td>Transmitir hechos u objetividad sin emitir opiniones personalizadas.</td>
+                                <td>Fechas, datos cuantitativos, verbos en 3ª persona.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Narrativo</strong></td>
+                                <td>Relatar una secuencia temporal de eventos ficticios o reales.</td>
+                                <td>Conectores temporales (<em>luego, después, finalmente</em>).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Expositivo</strong></td>
+                                <td>Explicar o desarrollar un concepto complejo para su comprensión.</td>
+                                <td>Organizadores explicativos (<em>es decir, esto significa</em>).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Argumentativo</strong></td>
+                                <td>Persuadir, convencer o refutar una postura teórica o ideológica.</td>
+                                <td>Conectores de valoración (<em>en mi opinión, se concluye</em>).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </article>
 
             <!-- Section 4 -->
             <article id="logica" class="card">
-                <h2><span>4.</span> Lógica y Argumentación</h2>
-                <p>Análisis de la validez y consistencia de las ideas planteadas en los textos de mayor complejidad[cite: 1]:</p>
+                <h2>4. Lógica y Argumentación</h2>
+                <p>Modulo clave para guiar a los estudiantes hacia los niveles superiores de razonamiento crítico:</p>
+
+                <h3>Premisas y Conclusiones</h3>
+                <p>Análisis de la estructura del razonamiento. Las premisas actúan como los cimientos de evidencia que sustentan la conclusión final.</p>
+
+                <h3>Estrategias Argumentativas</h3>
                 <ul>
-                    <li><strong>Introducción:</strong> Comprender la tesis central y el marco del argumento[cite: 1].</li>
-                    <li><strong>Argumentos:</strong> Razonamientos utilizados para demostrar o justificar una proposición[cite: 1].</li>
-                    <li><strong>Premisas y Conclusiones:</strong> Estructura fundamental de la inferencia lógica (afirmaciones previas que sustentan el resultado final)[cite: 1].</li>
-                    <li><strong>Estrategias de Argumentación:</strong> Métodos como el ejemplo, la autoridad, la analogía o la causa-efecto[cite: 1].</li>
-                    <li><strong>Textos de Tipo Filosófico:</strong> Análisis crítico de abstracciones, dilemas éticos y conceptos conceptuales complejos[cite: 1].</li>
-                    <li><strong>Falacias y Errores Argumentativos:</strong> Identificación de razonamientos engañosos o lógicamente inválidos[cite: 1].</li>
+                    <li><strong>Por Autoridad:</strong> Se respalda la idea mediante citas de expertos o instituciones reconocidas.</li>
+                    <li><strong>Por Causa-Efecto:</strong> Muestra la relación directa de causa entre dos hechos.</li>
+                    <li><strong>Por Analogía:</strong> Compara dos escenarios semejantes para trasladar la validez de uno a otro.</li>
                 </ul>
+
+                <h3>Textos Filosóficos y Falacias</h3>
+                <p>Revisión de razonamientos inválidos comunes en las lecturas, como el ataque personal (<em>Ad Hominem</em>), la apelación a la popularidad (<em>Ad Populum</em>) o la distorsión de argumentos (<em>Hombre de Paja</em>).</p>
             </article>
 
             <!-- Section 5 -->
             <article id="discontinuos" class="card">
-                <h2><span>5.</span> Textos Discontinuos</h2>
-                <p>Textos que no siguen una estructura de secuencias de oraciones y párrafos, sino que se organizan de forma visual o esquemática[cite: 1]:</p>
+                <h2>5. Textos Discontinuos</h2>
+                <p>Análisis de composiciones que utilizan la imagen, la tipografía y la distribución espacial de forma no lineal:</p>
                 <ul>
-                    <li><strong>Infografías:</strong> Combinación de imágenes explicativas, sintéticas y textos para comunicar información de manera visual[cite: 1].</li>
-                    <li><strong>Caricaturas:</strong> Ilustraciones que de forma satírica o humorística expresan una crítica sobre un tema social, político o cultural[cite: 1].</li>
-                    <li><strong>Cómics:</strong> Secuencia de viñetas que representan una historia mediante imágenes y texto narrativo o de diálogo[cite: 1].</li>
+                    <li><strong>Infografías:</strong> Combinación de gráficos explicativos, vectores y texto sintético. Se enseña a relacionar datos visuales con el texto.</li>
+                    <li><strong>Caricaturas:</strong> Ilustraciones satíricas de opinión política o crítica social donde predomina la ironía.</li>
+                    <li><strong>Cómics:</strong> Historietas en viñetas que requieren analizar la relación entre el gesto gráfico y el diálogo.</li>
                 </ul>
             </article>
 
@@ -356,17 +453,18 @@
 
     <!-- Footer -->
     <footer>
-        <p><strong>Clases con Juan</strong> - Preparación ICFES Saber 11[cite: 1]</p>
-        <p>Encuentra más herramientas de trabajo y contenido en nuestras redes[cite: 1]:</p>
+        <p><strong>Clases con Juan</strong> | Preparación para Pruebas Saber 11</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Encuentra más recursos pedagógicos en nuestros canales oficiales:</p>
         <div class="social-links">
-            <a href="http://www.clasesconjuan.co" target="_blank">Página Web[cite: 1]</a>
-            <a href="https://www.youtube.com/clasesconjuan" target="_blank">YouTube[cite: 1]</a>
-            <a href="#">Facebook[cite: 1]</a>
-            <a href="#">Instagram[cite: 1]</a>
-            <a href="#">Twitter[cite: 1]</a>
+            <a href="http://www.clasesconjuan.co" target="_blank">Página Web</a>
+            <a href="https://www.youtube.com/clasesconjuan" target="_blank">YouTube</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
         </div>
-        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;">Diseñado con inspiración espacial y navegabilidad accesible.</p>
     </footer>
 
 </body>
 </html>
+
+```
